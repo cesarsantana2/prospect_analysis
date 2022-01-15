@@ -24,6 +24,7 @@ national_judicial_response = {
     "properties" : {
         "first_name" : {"type" : "string"},
         "last_name" : {"type" : "string"},
+        "national_id_number" : {"type" : "number"},
         "cases_id" : {"type" :  ["number"]}
     }
 }
