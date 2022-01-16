@@ -21,10 +21,7 @@ def __prospect_qualification_check(first_name, last_name) -> bool:
     else:
         return False
 
-def __analyse_national_records(social_number) -> bool:
-    
-
-
+# def __analyse_national_records(social_number) -> bool:
 
 
 def prospect_analysis(social_number, first_name, last_name):

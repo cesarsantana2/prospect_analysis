@@ -28,4 +28,3 @@ national_judicial_response = {
         "cases_id" : {"type" :  ["number"]}
     }
 }
-    
