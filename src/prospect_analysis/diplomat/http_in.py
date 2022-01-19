@@ -1,6 +1,5 @@
 import domain.schema as d_schema
 import domain.source as d_source
-import adapters.primary as a_primary
 import adapters.secundary as a_secundary
 import jsonschema
 
