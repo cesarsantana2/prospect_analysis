@@ -8,8 +8,16 @@ def wire_input_to_validate(input_data):
         jsonschema.validate(input_data, d_schema.lead_information_schema)
     except:
         raise
+    
+    input_data_values = input_data.values()
 
-    return input_data
+    return input_data_values
+
+
+def prospect_score_response_to_value(prospect_score_response):
+    response = int(prospect_score_response.text)
+
+    return response
 
 
 def prospect_analyzis_result_to_wire(prospect_analysis_result):
@@ -29,7 +37,7 @@ def prospect_analyzis_result_to_wire(prospect_analysis_result):
 
 
 def process_national_records_result(national_records_result):
-    get_juducial_records_response_code = national_records_result[0].staus_code
+    get_juducial_records_response_code = national_records_result[0].status_code
     get_registry_by_social_number_response_code = national_records_result[1].status_code
 
     national_records_result_processed, context = l_natioanal_records.scenarios_matrix(get_juducial_records_response_code,

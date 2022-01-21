@@ -5,19 +5,11 @@ def scenarios_matrix(juducial_records_response_code,
         context = "The person related to this social number have judicial issues."
         return False, context
 
-    if registry_by_social_number_response_code == 400:
+    if registry_by_social_number_response_code == 404:
         context = "Social number not found at the national registries"
         return False, context
 
-    if juducial_records_response_code == 408:
-        context = "Timeout when getting judicial registries, please try again."
-        return False, context
-
-    if registry_by_social_number_response_code == 408:
-        context = "Timeout when getting national registries, please try again."
-        return False, context
-
-    if juducial_records_response_code == 400 and registry_by_social_number_response_code == 200:
+    if juducial_records_response_code == 404 and registry_by_social_number_response_code == 200:
         context = "Prospect able to proceed"
         return True, context
 
