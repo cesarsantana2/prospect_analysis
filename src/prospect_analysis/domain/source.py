@@ -1,18 +1,35 @@
-from diplomat.http_out import get_prospect_score
+import diplomat.http_out as d_http_out
+import logic.national_records as l_national_records
+import adapters.http as a_http
+import asyncio
 
 
 def __prospect_qualification_check(first_name, last_name) -> bool:
-    prospect_score = get_prospect_score(first_name,last_name)
-    if prospect_score > 60:
-        return True
-    else:
-        return False
+    prospect_score = d_http_out.get_prospect_score(first_name, last_name)
+    check_result, context = l_national_records.prospect_qualification_check(
+        prospect_score)
 
-# def prospect_analysis(social_number, first_name, last_name):
-#     (social_number)
-    
-#     prospect_score = __prospect_qualification_check(first_name, last_name)
-
-#     return regristry_response, judicial_records_response, prospect_score
+    return check_result, context
 
 
+def __get_national_records(social_number):
+    national_records_result = asyncio.run(
+        d_http_out.get_national_records_coroutines(social_number))
+
+    return national_records_result
+
+
+def prospect_analysis(social_number, first_name, last_name):
+
+    national_records_result = __get_national_records(social_number)
+    national_records_result_processed, context = a_http.process_national_records_result(
+        national_records_result)
+
+    if national_records_result_processed:
+
+        check_result, context = __prospect_qualification_check(
+            first_name, last_name)
+
+        return check_result, context
+
+    return national_records_result_processed, context
