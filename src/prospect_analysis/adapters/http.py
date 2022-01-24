@@ -1,6 +1,6 @@
 import jsonschema
-import domain.schema as d_schema
-import logic.national_records as l_natioanal_records
+from ..domain import schema as d_schema
+from ..logic import national_records as l_natioanal_records
 
 
 def wire_input_to_validate(input_data):
@@ -9,13 +9,13 @@ def wire_input_to_validate(input_data):
     except:
         raise
     
-    input_data_values = input_data.values()
+    input_data_values = list(input_data.values())
 
     return input_data_values
 
 
 def prospect_score_response_to_value(prospect_score_response):
-    response = int(prospect_score_response.text)
+    response = int(prospect_score_response)
 
     return response
 

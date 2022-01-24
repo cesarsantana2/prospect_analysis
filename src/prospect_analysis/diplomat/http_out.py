@@ -1,11 +1,11 @@
 import requests
 import requests_mock
-# import fixtures
+import fixtures
 import json
 import random
 import time
 import asyncio
-import diplomat.fixtures as fixtures
+import fixtures
 
 
 async def __get_juducial_records_by_social_number(social_number):
@@ -79,14 +79,7 @@ def get_prospect_score(first_name, last_name):
         response = requests.get(url)
 
         return response
+        
 
-
-# national_records_result = asyncio.run(get_national_records_coroutines(1001))
-# testando_pra_ver = national_records_result
-# print(testando_pra_ver)
-
-# rest = get_prospect_score("cesar", "santana")
-
-# response  = int(rest.text)
-# response_out = int(response)
-# print(response)
+result = get_prospect_score("cesar", "santana")
+print(result.text) 
