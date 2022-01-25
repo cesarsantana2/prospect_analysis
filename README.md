@@ -36,25 +36,31 @@ As was on said on a previous topic, this APP is following an Hexagonal Architect
 ├── src
 |   └── prospect_analysis
 │       ├── adapters
-|           ├── http.py
-|           └── __init__.py
+|       |   ├── http.py
+|       |   └── __init__.py
 │       ├── diplomat
-|           ├── fixtures.py
-│           ├── http_in.py
-│           ├── http_out.py
-|           └── __init__.py
+|       |   ├── fixtures.py
+│       │   ├── http_in.py
+│       │   ├── http_out.py
+|       |   └── __init__.py
 │       ├── domain
-│           ├── schema.py
-|           └── source.py    
-│       └── logic
-|           └── national_records.py  
+│       │   ├── schema.py
+|       |   ├── source.py
+|           └── __init__.py
+│       ├── logic
+|       |    └── national_records.py  
+|       └── __init__.py
 ├── test
+│   ├── unit
+|   ├── __init__.py
+│   ├── fixtures.py
 │   ├── adapters
-|       ├── http_test.py
-│   ├── diplomat
-│   ├── domain
+|   |   ├── __init__.py
+|   |   └── http_test.py
 │   └── logic
-|       └── national_records.py  
+|       ├── __init__.py
+|       └── national_records.py
+├── __init__.py   
 ├── README.md
 └── requirements.txt
 
@@ -66,14 +72,10 @@ To ensure the application works correctly, we wrote some tests and tried to anti
 
 ### Running tests
 
-To run the applcation tests make sure that you are at the root repository of it.
+To run the application tests make sure that you are on the packages path, that is `src/prospect_analysis`.
 
-### Unit
-
-To run
+Once you are there run the command bellow:
 
 ```bash
-
-$ python3 -m unittest unit/adapters/http_test.py
-
+$ python3 -m pytest ../../test/
 ```
