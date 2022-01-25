@@ -1,6 +1,6 @@
-import diplomat.http_out as d_http_out
-import logic.national_records as l_national_records
-import adapters.http as a_http
+from diplomat import http_out as d_http_out
+from logic import national_records as l_national_records
+from adapters import http as a_http
 import asyncio
 
 

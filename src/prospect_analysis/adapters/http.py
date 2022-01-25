@@ -1,6 +1,6 @@
 import jsonschema
-from ..domain import schema as d_schema
-from ..logic import national_records as l_natioanal_records
+from domain import schema as d_schema
+from logic import national_records as l_natioanal_records
 
 
 def wire_input_to_validate(input_data):

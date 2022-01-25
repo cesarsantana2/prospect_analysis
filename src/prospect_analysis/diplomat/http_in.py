@@ -1,5 +1,5 @@
-import domain.source as d_source
-import adapters.http as a_http
+from domain import source as d_source
+from adapters import http as a_http
 
 
 def prospect_analysis(input_data):

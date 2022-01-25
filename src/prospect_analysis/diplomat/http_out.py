@@ -1,11 +1,10 @@
+from . import fixtures
 import requests
 import requests_mock
-import fixtures
 import json
 import random
 import time
 import asyncio
-import fixtures
 
 
 async def __get_juducial_records_by_social_number(social_number):
@@ -79,7 +78,3 @@ def get_prospect_score(first_name, last_name):
         response = requests.get(url)
 
         return response
-        
-
-result = get_prospect_score("cesar", "santana")
-print(result.text) 

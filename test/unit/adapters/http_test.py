@@ -1,5 +1,5 @@
-from src.prospect_analysis.adapters import http
-from test.unit import fixtures
+from ....src.prospect_analysis.adapters import http
+from .. import fixtures
 
 
 def test_wire_input_to_validate():

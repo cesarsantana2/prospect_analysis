@@ -1,6 +1,6 @@
 import sys
 import json
-import diplomat.http_in as http_in
+from diplomat import http_in
 
 input_data = json.loads(sys.argv[1])
 
