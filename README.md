@@ -66,6 +66,16 @@ As was on said on a previous topic, this APP is following an Hexagonal Architect
 
 ```
 
+## Running the Applcation
+
+To run the application make sure that you are on the packages path, that is `src/prospect_analysis`.
+
+Now you need to execute the main file passing an json as argument. e.g.:
+
+```bash
+$ python3 main.py '{"national_id_number": 1006, "first_name": "cesar", "last_name": "santana"}'
+```
+
 ## Testing
 
 To ensure the application works correctly, we wrote some tests and tried to anticipate any problems that might appear.
